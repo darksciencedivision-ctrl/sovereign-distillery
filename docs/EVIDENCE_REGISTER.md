@@ -5,7 +5,7 @@ Repository evidence artifacts supporting the thesis's measured claims.
 | # | Claim | Required artifact | Status |
 |---|---|---|---|
 | 1 | Hardware profile (VRAM free, sm_120, driver) | `runs/hardware_profile.json` | **Present — captured 2026-08-19 on the operator machine** |
-| 2 | Teacher registry (43 entries, ordering, roles) | `registry/teachers.json` | **Present — captured 2026-08-19 on the operator machine** |
+| 2 | Teacher registry (43 entries, 39 teachers, ordering, roles) | `registry/teachers.json`, `registry/validation.json` | **MEASURED + independently validated — refreshed 2026-08-20** |
 | 3 | Source tools exist | `tools/d1_characterize.py`, `tools/d2_registry.py` | **Present in v1.1 package** |
 | 4 | Generation throughput on a T1 teacher | Planned F.1 result artifact | Pending — requires `d3_throughput.py` + live run |
 | 5 | `sm_120` 4-bit QLoRA toolchain viability | `runs/F0_training_stack/attempt-001/result.json` | **MEASURED — PASS; NF4 load, CUDA forward, LoRA backward, and optimizer step succeeded** |

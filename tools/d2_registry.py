@@ -300,6 +300,9 @@ def ollama_list_fallback(errors):
 
 def classify_role(name, params, quant, gib, all_names):
     n = name.lower()
+    if "mmproj" in n:
+        return "ARTIFACT", ("Multimodal projector artifact. It is not a standalone "
+                            "generative language model and cannot enter the teacher queue.")
     if any(h in n for h in EMBEDDING_HINTS):
         return "INFRASTRUCTURE", ("Embedding model. Cannot generate instruction data; "
                                   "use for dedup / diversity scoring / retrieval validation.")
@@ -347,7 +350,8 @@ def build(entries, parse_gguf=True, usable_vram_gib=5.26, corpus_tokens=8_000_00
             "tier": None, "estimated_tok_per_sec": None, "estimated_gen_days": None,
             "measured_tok_per_sec": None,
             "disposition": "PENDING", "disposition_history": [],
-            "queue_position": None,
+            "queue_position": None, "canonical_order": None,
+            "execution_tier": None, "execution_status": "PENDING_MEASUREMENT",
         }
         if e.get("license_blob_excerpt"):
             rec["license_blob_excerpt"] = e["license_blob_excerpt"]
@@ -406,6 +410,13 @@ def build(entries, parse_gguf=True, usable_vram_gib=5.26, corpus_tokens=8_000_00
         if role == "TEACHER" and rec["disk_size_gib"]:
             t, tps, days = tier_for(rec["disk_size_gib"], usable_vram_gib, corpus_tokens)
             rec["tier"], rec["estimated_tok_per_sec"], rec["estimated_gen_days"] = t, tps, days
+            rec["execution_tier"] = t
+            rec["execution_status"] = (
+                "PENDING_MEASUREMENT" if t in ("T1-VIABLE", "T2-COSTLY")
+                else "DEFERRED_COMPUTE"
+            )
+        elif role != "TEACHER":
+            rec["execution_status"] = "NOT_APPLICABLE"
         recs.append(rec)
 
     # TD-4: dedup by content hash, not path
@@ -431,6 +442,7 @@ def build(entries, parse_gguf=True, usable_vram_gib=5.26, corpus_tokens=8_000_00
     teachers.sort(key=lambda r: (r["parameter_count"] or 0, r["disk_size_bytes"]))
     for i, r in enumerate(teachers, 1):
         r["queue_position"] = i
+        r["canonical_order"] = i
         r["model_id"] = "T%03d" % i
     other = [r for r in recs if r not in teachers]
     for j, r in enumerate(other, 1):
@@ -509,15 +521,25 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     payload = {
-        "schema": "sovereign-distillery/teacher_registry/v1",
+        "schema": "sovereign-distillery/teacher_registry/v2",
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "teacher_count": len(recs),
+        "entry_count": len(recs),
+        "teacher_count": sum(
+            1 for r in recs
+            if r["role"] == "TEACHER" and r["disposition"] != "SUPERSEDED"
+        ),
+        "non_teacher_count": sum(
+            1 for r in recs
+            if r["role"] != "TEACHER" or r["disposition"] == "SUPERSEDED"
+        ),
+        "total_storage_bytes": sum(r["disk_size_bytes"] for r in recs),
+        "total_storage_gib": round(sum(r["disk_size_bytes"] for r in recs) / 1024**3, 3),
         "scan_errors": errors,
         "license_audit_status": "NOT STARTED — all classes UNKNOWN",
         "teachers": recs,
     }
     (out_dir / "teachers.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
-    note = (f"{len(recs)} models discovered. "
+    note = (f"{len(recs)} entries discovered; {payload['teacher_count']} generative teachers. "
             + ("Scan errors: " + "; ".join(errors) if errors else "No scan errors."))
     (out_dir / "teachers.md").write_text(to_markdown(recs, note), encoding="utf-8")
 

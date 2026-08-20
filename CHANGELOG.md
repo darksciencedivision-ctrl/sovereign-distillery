@@ -5,10 +5,17 @@
 ### Measured
 
 - **F.0 PASS** — PyTorch 2.13.0+cu130 sees the RTX 5060 Ti as `sm_120`; bitsandbytes 0.50.1 loaded an NF4 model and completed CUDA forward, LoRA backward, and an AdamW optimizer step.
+- **D2 PASS** — Recomputed 43 entries / 39 generative teachers / 768.406 GiB and verified canonical smallest-to-largest order.
 
 ### Added
 
 - Reproducible F.0 harness and structured evidence under `runs/F0_training_stack/`.
+- D2 registry validator and schema-v2 canonical/execution queue fields.
+
+### Corrected
+
+- Classified the 461M multimodal projector as `ARTIFACT` instead of a generative teacher.
+- Replaced the ambiguous registry `teacher_count` with distinct entry, teacher, and non-teacher totals.
 
 ## [1.1.0] — 2026-08-19
 

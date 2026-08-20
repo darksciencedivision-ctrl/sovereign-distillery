@@ -1,0 +1,77 @@
+{
+  "schema": "sovereign-distillery/teacher_registry_validation/v1",
+  "status": "PASS",
+  "classification": "DERIVED_FROM_MEASURED_ARTIFACT",
+  "validated_at": "2026-08-20T01:22:40.004792+00:00",
+  "registry_path": "registry\\teachers.json",
+  "registry_generated_at": "2026-08-20T01:22:01.019146+00:00",
+  "entry_count": 43,
+  "generative_teacher_count": 39,
+  "non_teacher_count": 4,
+  "total_storage_bytes": 825069617440,
+  "total_storage_gib": 768.406,
+  "smallest_teacher": {
+    "model_id": "T001",
+    "display_name": "dolphin3:8b",
+    "parameter_count": 8000000000,
+    "quantization": "Q4_K_M",
+    "disk_size_gib": 4.583,
+    "canonical_order": 1
+  },
+  "largest_teacher": {
+    "model_id": "T039",
+    "display_name": "mistral-medium-3.5:latest",
+    "parameter_count": 127704210176,
+    "quantization": "Q4_K_M",
+    "disk_size_gib": 74.731,
+    "canonical_order": 39
+  },
+  "tier_counts": {
+    "T1-VIABLE": 5,
+    "T2-COSTLY": 16,
+    "T3-DEFERRED": 12,
+    "T4-INFEASIBLE": 6
+  },
+  "deferred_compute_count": 18,
+  "license_unknown_count": 43,
+  "role_counts": {
+    "ARTIFACT": 1,
+    "INFRASTRUCTURE": 3,
+    "TEACHER": 39
+  },
+  "quantization_counts": {
+    "IQ2_M": 2,
+    "Q4_0": 3,
+    "Q4_K_M": 32,
+    "ftype_4": 2
+  },
+  "architecture_counts": {
+    "gemma3": 1,
+    "gemma4": 3,
+    "glm4": 2,
+    "glm4moelite": 1,
+    "gptoss": 2,
+    "granite": 1,
+    "laguna": 1,
+    "llama": 7,
+    "llama4": 1,
+    "mistral3": 3,
+    "phi3": 1,
+    "qwen2": 3,
+    "qwen3": 4,
+    "qwen35": 5,
+    "qwen35moe": 2,
+    "qwen3moe": 2
+  },
+  "runtime_counts": {
+    "lmstudio": 2,
+    "ollama": 41
+  },
+  "cross_checks": {
+    "entry_count_matches": true,
+    "teacher_count_matches": true,
+    "non_teacher_count_matches": true,
+    "total_storage_matches": true
+  },
+  "failures": []
+}
