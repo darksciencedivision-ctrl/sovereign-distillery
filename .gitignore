@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# Sovereign Distillery Thesis — repository ignore rules
+#
+# NOTE (TR-1): runs/ holds BOTH bulk training/generation logs (never commit)
+# AND the small JSON evidence profiles that EVIDENCE_REGISTER.md requires in
+# order to promote MEASURED-REPORTED claims to MEASURED. The carve-out below
+# keeps the bulk out while letting the evidence in.
+# ---------------------------------------------------------------------------
+
+# Python / training environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local model/training artifacts
+checkpoints/
+corpora/
+deploy/
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Run outputs — bulk excluded, evidence profiles retained
+runs/*
+!runs/*.json
+runs/**/*.log
+runs/**/*.jsonl
+runs/**/*.csv
+
+# registry/ is intentionally NOT ignored: registry/teachers.json is a required
+# evidence artifact (EVIDENCE_REGISTER item 2). Before making this repository
+# public, review it for local-path and inventory disclosure (TR-8).
+
+# Secrets / environment
+.env
+.env.*
+*.key
+*.pem
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

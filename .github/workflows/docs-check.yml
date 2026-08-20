@@ -1,0 +1,58 @@
+name: docs-check
+
+# Makes the SHIP_CHECKLIST's manual link check permanent, and catches the
+# TR-4 class of defect: prose that cites a repository path which does not exist.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve internal Markdown links
+        run: |
+          python3 - <<'PY'
+          import re, sys
+          from pathlib import Path
+          bad, ok = [], 0
+          for md in Path(".").rglob("*.md"):
+              if ".github" in md.parts: continue
+              for m in re.finditer(r'\[([^\]]*)\]\(([^)]+)\)', md.read_text(encoding="utf-8")):
+                  tgt = m.group(2).split('#')[0].strip()
+                  if not tgt or tgt.startswith(("http://","https://","mailto:")): continue
+                  if (md.parent / tgt).exists(): ok += 1
+                  else: bad.append(f"{md}: [{m.group(1)}]({tgt})")
+          print(f"resolved={ok} broken={len(bad)}")
+          for b in bad: print("BROKEN:", b)
+          sys.exit(1 if bad else 0)
+          PY
+
+      - name: Check cited repository paths exist
+        run: |
+          python3 - <<'PY'
+          import re, sys
+          from pathlib import Path
+          pat = re.compile(r'`((?:tools|registry|evals|lineage|docs)/[A-Za-z0-9_./-]+)`')
+          missing = []
+          for md in Path(".").rglob("*.md"):
+              if ".github" in md.parts: continue
+              for m in pat.finditer(md.read_text(encoding="utf-8")):
+                  if not Path(m.group(1)).exists():
+                      missing.append(f"{md}: {m.group(1)}")
+          for x in missing: print("MISSING PATH:", x)
+          print(f"missing={len(missing)}")
+          sys.exit(1 if missing else 0)
+          PY
+
+      - name: Refuse committed weights or secrets
+        run: |
+          if git ls-files | grep -Ei '\.(gguf|safetensors|pt|pth|key|pem)$|(^|/)\.env'; then
+            echo "Disallowed file type committed."; exit 1
+          fi
+          echo "clean"

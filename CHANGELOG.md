@@ -1,0 +1,41 @@
+# Changelog
+
+## [1.1.0] — 2026-08-19
+
+### Fixed (from THESIS-REVIEW-v1.1 / PATCH-NOTES)
+
+- **TR-1** — `.gitignore` no longer excludes evidence JSON under `runs/`.
+- **TR-2** — Restored INV-8, INV-9, INV-10, INV-13, INV-15 to the invariant table.
+- **TR-3** — Restored RD-2 (remediation route) and RD-3 (criticality tag + gate) in Capability Ledger and promotion rule.
+- **TR-4** — Committed `tools/d1_characterize.py`, `tools/d2_registry.py`, `tools/d3_throughput.py`, `tools/README.md`.
+- **TR-5** — Phase namespace canonicalised to `F.*`; dual D3/F.3 reference removed.
+- **TR-6** — EF-3 tier verdicts aligned with §6 (T3/T4 remain in canonical queue).
+- **TR-7 / TR-8** — Ship checklist records private-repo and inventory-disclosure requirements.
+- **TR-9** — `docs-check` GitHub Actions workflow added (link resolution, cited-path existence, no weights/secrets).
+
+### Added
+
+- `docs/SHIP_CHECKLIST.md`
+- `docs/OQ_CROSSWALK.md`
+- `docs/EVIDENCE_REGISTER.md`
+- `.github/workflows/docs-check.yml`
+
+## [1.0.0] — 2026-08-19
+
+### Added
+
+- First evidence-grounded design thesis.
+- Measured hardware profile (RTX 5060 Ti, 5.26 GiB free VRAM, `sm_120`).
+- Complete library enumeration (43 entries / 39 generative teachers / 768.4 GiB).
+- Tiered feasibility frontier (T1–T4).
+- Dual-gate promotion rule (T + D).
+- Route A / Route B acceptance criteria.
+- Seed strategy Option C (bootstrap → native migration).
+- Generation-depth and base-family registry fields.
+- Distillery Knowledge Lineage scoped as structured experiment record.
+
+### Closed
+
+- OQ-002 (library inventory).
+- OQ-003 (v1 acceptance).
+- OQ-010 (ordering rationale).
