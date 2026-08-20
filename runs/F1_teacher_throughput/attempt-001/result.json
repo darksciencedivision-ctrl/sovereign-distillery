@@ -1,0 +1,23 @@
+{
+  "schema": "sovereign-distillery/f1-attempt/v1",
+  "phase": "F.1",
+  "status": "FAIL",
+  "failure_category": "RUNTIME_CONTENTION",
+  "requested_teacher": {
+    "teacher_id": "T001",
+    "canonical_order": 1,
+    "model": "dolphin3:8b"
+  },
+  "observations": {
+    "cold_request_completed": true,
+    "cold_load_seconds_reported": 21.488,
+    "cold_generation_tokens_per_second_reported": 68.676,
+    "warmup_completed": false,
+    "unexpected_resident_model": "orcarouter/Qwen3.8-27B-Uncensored:latest",
+    "unexpected_resident_size": "26 GB",
+    "unexpected_processor_split": "80% CPU / 20% GPU"
+  },
+  "failure": "An unrelated concurrent `ollama run` process loaded a 27B model while the requested T001 warm-up was pending. The run was terminated because subsequent timing could not be attributed to dolphin3:8b.",
+  "measurement_disposition": "REJECTED_CONTAMINATED",
+  "timestamp_utc": "2026-08-20T01:20:00Z"
+}

@@ -1,0 +1,158 @@
+{
+  "schema": "sovereign-distillery/f1-result/v1",
+  "phase": "F.1",
+  "status": "PASS",
+  "classification": "MEASURED",
+  "teacher": {
+    "teacher_id": "T001",
+    "canonical_order": 1,
+    "model": "dolphin3:8b",
+    "parameter_count": 8000000000,
+    "parameter_basis": "label_parsed",
+    "quantization": "Q4_K_M",
+    "architecture": "llama",
+    "runtime": "ollama",
+    "context_length": 131072,
+    "execution_tier": "T1-VIABLE"
+  },
+  "warmup": {
+    "timestamp_utc": "2026-08-20T01:26:58.825080+00:00",
+    "prompt_id": "warmup",
+    "repeat": 0,
+    "seed": 40,
+    "max_output_tokens": 128,
+    "output_tokens": 68,
+    "prompt_tokens": 34,
+    "generation_tokens_per_second": 73.32263685454514,
+    "prompt_tokens_per_second": 1604.6818954124979,
+    "load_seconds": 0.3332199,
+    "prompt_eval_seconds": 0.021188,
+    "generation_seconds": 0.927408,
+    "total_server_seconds": 1.2926292,
+    "client_wall_seconds": 1.3169338000006974,
+    "done_reason": "stop",
+    "resident_models_after": [
+      "dolphin3:8b"
+    ],
+    "vram_before_mib": {
+      "total_mib": 8151,
+      "used_mib": 7171,
+      "free_mib": 721
+    },
+    "vram_after_mib": {
+      "total_mib": 8151,
+      "used_mib": 7169,
+      "free_mib": 723
+    },
+    "ram_available_before_bytes": 41486278656,
+    "ram_available_after_bytes": 41609633792
+  },
+  "statistics": {
+    "trial_count": 15,
+    "total_output_tokens": 2505,
+    "generation_tokens_per_second": {
+      "mean": 72.94653524678455,
+      "median": 72.47470250691694,
+      "minimum": 71.58472359628229,
+      "maximum": 74.76437164163266,
+      "standard_deviation": 0.9309868483328675,
+      "variance": 0.8667365117687655
+    },
+    "prompt_tokens_per_second": {
+      "mean": 2142.3620971229416,
+      "median": 2079.002079002079
+    },
+    "client_wall_seconds": {
+      "total": 40.52742009998474,
+      "mean": 2.7018280066656493
+    }
+  },
+  "resource_measurements": {
+    "vram_total_mib": 8151,
+    "vram_used_after_unload_mib": 2086,
+    "peak_observed_system_vram_used_mib": 7171,
+    "peak_observed_model_delta_mib": 5085,
+    "peak_observation_method": "nvidia-smi sampled immediately after each blocking generation",
+    "ollama_ps_after_trials": "NAME           ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \ndolphin3:8b    d5ab9ae8e1f2    5.3 GB    100% GPU     4096       9 minutes from now",
+    "minimum_system_ram_available_bytes": 41325277184
+  },
+  "derived_generation_estimates": [
+    {
+      "target_output_tokens": 100000,
+      "formula": "target_output_tokens / measured_mean_generation_tokens_per_second",
+      "estimated_seconds": 1370.8670283200045,
+      "estimated_hours": 0.3807963967555568,
+      "estimated_days": 0.015866516531481533,
+      "classification": "DERIVED",
+      "assumption": "Mean warm single-stream throughput remains constant; this excludes failures, restarts, prompt growth, thermal drift, and long-run scheduling overhead."
+    },
+    {
+      "target_output_tokens": 1000000,
+      "formula": "target_output_tokens / measured_mean_generation_tokens_per_second",
+      "estimated_seconds": 13708.670283200045,
+      "estimated_hours": 3.807963967555568,
+      "estimated_days": 0.15866516531481534,
+      "classification": "DERIVED",
+      "assumption": "Mean warm single-stream throughput remains constant; this excludes failures, restarts, prompt growth, thermal drift, and long-run scheduling overhead."
+    },
+    {
+      "target_output_tokens": 5000000,
+      "formula": "target_output_tokens / measured_mean_generation_tokens_per_second",
+      "estimated_seconds": 68543.35141600022,
+      "estimated_hours": 19.03981983777784,
+      "estimated_days": 0.7933258265740767,
+      "classification": "DERIVED",
+      "assumption": "Mean warm single-stream throughput remains constant; this excludes failures, restarts, prompt growth, thermal drift, and long-run scheduling overhead."
+    }
+  ],
+  "limitations": [
+    "This is deterministic single-stream throughput, not concurrent aggregate throughput.",
+    "nvidia-smi was sampled after each blocking request; transient within-request peaks may be higher.",
+    "Long-run projections assume constant mean warm throughput and exclude failures or scheduling overhead.",
+    "The teacher license remains UNKNOWN; F.1 proves technical executability, not training-data eligibility."
+  ],
+  "failures": [],
+  "evidence_paths": [
+    "runs\\F1_teacher_throughput\\README.md",
+    "runs\\F1_teacher_throughput\\result.json",
+    "runs\\F1_teacher_throughput\\prompts.json",
+    "runs\\F1_teacher_throughput\\trials.jsonl",
+    "runs\\F1_teacher_throughput\\environment.json",
+    "runs\\F1_teacher_throughput\\stdout.txt",
+    "runs\\F1_teacher_throughput\\stderr.txt",
+    "runs\\F1_teacher_throughput\\commands.txt"
+  ],
+  "timestamp_utc": "2026-08-20T01:27:41.258694+00:00",
+  "cold_load": {
+    "timestamp_utc": "2026-08-20T01:26:57.390103+00:00",
+    "prompt_id": "cold_load_probe",
+    "repeat": 0,
+    "seed": 40,
+    "max_output_tokens": 32,
+    "output_tokens": 12,
+    "prompt_tokens": 32,
+    "generation_tokens_per_second": 73.40661760657723,
+    "prompt_tokens_per_second": 411.58085634541925,
+    "load_seconds": 12.3678862,
+    "prompt_eval_seconds": 0.077749,
+    "generation_seconds": 0.163473,
+    "total_server_seconds": 12.6126969,
+    "client_wall_seconds": 12.640103700003237,
+    "done_reason": "stop",
+    "resident_models_after": [
+      "dolphin3:8b"
+    ],
+    "vram_before_mib": {
+      "total_mib": 8151,
+      "used_mib": 2086,
+      "free_mib": 5806
+    },
+    "vram_after_mib": {
+      "total_mib": 8151,
+      "used_mib": 7171,
+      "free_mib": 721
+    },
+    "ram_available_before_bytes": 42414424064,
+    "ram_available_after_bytes": 41484894208
+  }
+}

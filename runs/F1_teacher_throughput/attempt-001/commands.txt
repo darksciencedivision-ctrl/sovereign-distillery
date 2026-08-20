@@ -1,0 +1,5 @@
+.venv\Scripts\python.exe tools\f1_benchmark.py --model dolphin3:8b --teacher-id T001 --registry D:\_codex_tmp\sovereign_d2_validate\teachers.json --out-dir runs\F1_teacher_throughput --max-tokens 256 --repeats 3
+ollama ps
+nvidia-smi --query-gpu=memory.used,memory.free,utilization.gpu --format=csv,noheader,nounits
+ollama show dolphin3:8b
+ollama show --modelfile dolphin3:8b

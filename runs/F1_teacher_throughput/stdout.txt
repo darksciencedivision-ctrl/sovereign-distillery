@@ -1,0 +1,20 @@
+[2026-08-20T01:26:44.425809+00:00] Unloading dolphin3:8b before the cold-load capture
+[2026-08-20T01:26:57.390103+00:00] Cold load: 12.368s; generation 73.407 tok/s
+[2026-08-20T01:26:57.390103+00:00] Running one unmeasured warm-up generation
+[2026-08-20T01:26:58.825080+00:00] Running 15 measured warm trials
+[2026-08-20T01:26:59.775867+00:00] trial=01 prompt=short_answer repeat=1 output=31 tok/s=73.857
+[2026-08-20T01:27:03.861853+00:00] trial=02 prompt=long_form repeat=1 output=256 tok/s=71.585
+[2026-08-20T01:27:07.941791+00:00] trial=03 prompt=code repeat=1 output=256 tok/s=72.450
+[2026-08-20T01:27:08.975903+00:00] trial=04 prompt=structured repeat=1 output=36 tok/s=73.276
+[2026-08-20T01:27:13.043771+00:00] trial=05 prompt=reasoning repeat=1 output=256 tok/s=72.453
+[2026-08-20T01:27:13.983805+00:00] trial=06 prompt=short_answer repeat=2 output=31 tok/s=74.764
+[2026-08-20T01:27:18.024835+00:00] trial=07 prompt=long_form repeat=2 output=256 tok/s=72.401
+[2026-08-20T01:27:22.088849+00:00] trial=08 prompt=code repeat=2 output=256 tok/s=72.349
+[2026-08-20T01:27:23.068494+00:00] trial=09 prompt=structured repeat=2 output=36 tok/s=74.400
+[2026-08-20T01:27:27.124630+00:00] trial=10 prompt=reasoning repeat=2 output=256 tok/s=72.274
+[2026-08-20T01:27:28.083028+00:00] trial=11 prompt=short_answer repeat=3 output=31 tok/s=73.779
+[2026-08-20T01:27:32.127683+00:00] trial=12 prompt=long_form repeat=3 output=256 tok/s=72.475
+[2026-08-20T01:27:36.164578+00:00] trial=13 prompt=code repeat=3 output=256 tok/s=72.645
+[2026-08-20T01:27:37.169172+00:00] trial=14 prompt=structured repeat=3 output=36 tok/s=73.532
+[2026-08-20T01:27:41.211721+00:00] trial=15 prompt=reasoning repeat=3 output=256 tok/s=71.958
+[2026-08-20T01:27:41.258694+00:00] F.1 PASS: mean=72.947 median=72.475 stdev=0.931 tok/s

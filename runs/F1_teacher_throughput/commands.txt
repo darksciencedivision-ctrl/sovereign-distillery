@@ -1,0 +1,3 @@
+ollama ps
+.venv\Scripts\python.exe tools\f1_benchmark.py --model dolphin3:8b --teacher-id T001 --registry registry\teachers.json --out-dir runs\F1_teacher_throughput --max-tokens 256 --repeats 3
+.venv\Scripts\python.exe tools\apply_f1_overlay.py --registry registry\teachers.json --result runs\F1_teacher_throughput\result.json --corpus-tokens 8000000

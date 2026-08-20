@@ -31,7 +31,7 @@ This repository contains the canonical **evidence-grounded thesis and engineerin
 | Phase | Status | Evidence |
 |---|---|---|
 | **F.0 — `sm_120` 4-bit training path** | **PASS** — NF4 load, CUDA forward, LoRA backward, optimizer step | [`runs/F0_training_stack/`](runs/F0_training_stack/) |
-| **F.1 — teacher throughput** | Pending | Evidence directory will be created by F.1 |
+| **F.1 — teacher throughput** | **PASS** — T001 mean 72.947 tok/s across 15 trials | [`runs/F1_teacher_throughput/`](runs/F1_teacher_throughput/) |
 
 ## Documents
 
@@ -53,12 +53,13 @@ This repository contains the canonical **evidence-grounded thesis and engineerin
 - **OQ-003 (v1 acceptance)** — CLOSED (Route A = pipeline proof, Route B = transfer proof; v1 requires Route B).
 - **F.0 toolchain gate** — PASS on PyTorch 2.13.0+cu130 / bitsandbytes 0.50.1; the 1–3B capacity boundary remains unmeasured.
 - **D3 seed shortlist** — COMPLETE with three Apache-2.0 base checkpoints; `SOV-SEED` remains operator-owned.
+- **F.1 throughput** — PASS for canonical `T001 dolphin3:8b`; technical execution measured, license eligibility still pending.
 
 ## Immediate next steps
 
-1. Measure real generation throughput on the smallest executable canonical teacher.
-2. Validate registry order/tier metadata against the raw artifact.
-3. Shortlist and baseline external 1–3B seed candidates.
+1. Baseline the three D3 seed candidates under the same deterministic D4 suite.
+2. Produce an evidence-backed bootstrap-seed recommendation for operator review.
+3. Audit primary licenses before any teacher becomes `ELIGIBLE`.
 4. Build and freeze the full evaluation suite.
 
 ## Visibility warning

@@ -1,0 +1,20 @@
+{
+  "captured_at": "2026-08-20T01:26:44.255998+00:00",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.12.10",
+  "python_executable": "D:\\sovereign-distillery-thesis-v1.1\\.venv\\Scripts\\python.exe",
+  "ollama_version": "ollama version is 0.32.14",
+  "ollama_host": "http://127.0.0.1:11434",
+  "system_ram_total_bytes": 68399640576,
+  "system_ram_available_bytes": 42497007616,
+  "vram_before_unload_mib": {
+    "total_mib": 8151,
+    "used_mib": 2088,
+    "free_mib": 5804
+  },
+  "vram_after_unload_mib": {
+    "total_mib": 8151,
+    "used_mib": 2086,
+    "free_mib": 5806
+  }
+}

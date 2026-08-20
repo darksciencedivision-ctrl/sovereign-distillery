@@ -38,13 +38,21 @@
       "tier": "T1-VIABLE",
       "estimated_tok_per_sec": 55.0,
       "estimated_gen_days": 1.7,
-      "measured_tok_per_sec": null,
+      "measured_tok_per_sec": 72.94653524678455,
       "disposition": "PENDING",
-      "disposition_history": [],
+      "disposition_history": [
+        {
+          "timestamp_utc": "2026-08-20T01:28:53.316324+00:00",
+          "event": "F1_THROUGHPUT_MEASURED",
+          "execution_status": "MEASURED_EXECUTABLE",
+          "measured_tok_per_sec": 72.94653524678455,
+          "note": "Technical executability only; disposition remains PENDING until license audit."
+        }
+      ],
       "queue_position": 1,
       "canonical_order": 1,
       "execution_tier": "T1-VIABLE",
-      "execution_status": "PENDING_MEASUREMENT",
+      "execution_status": "MEASURED_EXECUTABLE",
       "license_blob_excerpt": "LLAMA 3.1 COMMUNITY LICENSE AGREEMENT\nLlama 3.1 Version Release Date: July 23, 2024\n\n\u201cAgreement\u201d means the terms and conditions for use, reproduction, distribution and modification of the\nLlama Materials set forth herein.\n\n\u201cDocumentation\u201d means the specifications, manuals and documentation accompanying Llama 3.1\ndistributed by Meta at https://llama.meta.com/doc/overview.\n\n\u201cLicensee\u201d or \u201cyou\u201d means",
       "gguf_metadata": {
         "general.architecture": "llama",
@@ -57,7 +65,9 @@
         "tokenizer.ggml.model": "gpt2",
         "tokenizer.ggml.pre": "llama-bpe",
         "general.quantization_version": 2
-      }
+      },
+      "measured_gen_days": 1.2693213225185227,
+      "execution_evidence": "runs/F1_teacher_throughput/result.json"
     },
     {
       "model_id": "T002",

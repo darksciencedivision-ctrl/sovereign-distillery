@@ -1,0 +1,28 @@
+{
+  "temperature": 0,
+  "num_ctx": 4096,
+  "max_output_tokens": 256,
+  "repeats_per_prompt": 3,
+  "prompts": [
+    {
+      "id": "short_answer",
+      "text": "In one sentence, explain the difference between latency and throughput."
+    },
+    {
+      "id": "long_form",
+      "text": "Explain how gradient checkpointing reduces memory during neural-network training. Include its compute tradeoff and one practical limitation."
+    },
+    {
+      "id": "code",
+      "text": "Write a Python function that merges two sorted integer lists in O(n) time. Include a docstring and three assert-based tests."
+    },
+    {
+      "id": "structured",
+      "text": "Return only valid JSON with keys name, version, and deps, where deps is an array of exactly three strings."
+    },
+    {
+      "id": "reasoning",
+      "text": "A train leaves at 14:05 traveling 80 km/h. Another leaves the same station at 14:35 traveling 120 km/h on the same route. At what time does the second train catch the first? Show the calculation."
+    }
+  ]
+}

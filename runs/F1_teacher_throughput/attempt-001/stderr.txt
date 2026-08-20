@@ -1,0 +1,4 @@
+Benchmark interrupted after runtime inspection showed an unrelated resident model:
+orcarouter/Qwen3.8-27B-Uncensored:latest | 26 GB | 80%/20% CPU/GPU | context 131072
+
+The requested dolphin3:8b manifest was independently verified as an 8.0B Q4_K_M Llama model. No throughput result from this attempt is accepted.
