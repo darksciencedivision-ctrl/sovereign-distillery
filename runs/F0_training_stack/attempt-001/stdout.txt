@@ -1,0 +1,6 @@
+[2026-08-20T01:10:25.819562+00:00] F0-A: checking CUDA and PyTorch device visibility
+[2026-08-20T01:10:25.953980+00:00] F0-B: checking bitsandbytes CUDA backend with Linear4bit
+[2026-08-20T01:10:26.129380+00:00] F0-C: loading HuggingFaceTB/SmolLM2-135M in NF4 on CUDA
+[2026-08-20T01:10:34.058339+00:00] F0-D: executing tokenized forward pass on CUDA
+[2026-08-20T01:10:34.619310+00:00] F0-E: attaching LoRA and executing loss/backward/optimizer step
+[2026-08-20T01:10:35.058163+00:00] F.0 PASS: 4-bit load, CUDA forward, LoRA backward, and optimizer step succeeded

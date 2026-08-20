@@ -26,9 +26,16 @@ deploy/
 # Run outputs — bulk excluded, evidence profiles retained
 runs/*
 !runs/*.json
+!runs/F0_training_stack/
+!runs/F0_training_stack/**
+!runs/F1_teacher_throughput/
+!runs/F1_teacher_throughput/**
 runs/**/*.log
-runs/**/*.jsonl
 runs/**/*.csv
+
+# Model/download caches remain local even when a phase evidence directory is kept.
+runs/**/model_cache/
+runs/**/artifacts/model_cache/
 
 # registry/ is intentionally NOT ignored: registry/teachers.json is a required
 # evidence artifact (EVIDENCE_REGISTER item 2). Before making this repository

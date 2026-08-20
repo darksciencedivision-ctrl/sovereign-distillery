@@ -1,0 +1,36 @@
+{
+  "captured_at": "2026-08-20T01:10:17.577630+00:00",
+  "os": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 191 Stepping 2, GenuineIntel",
+  "python_version": "3.12.10",
+  "python_executable": "D:\\sovereign-distillery-thesis-v1.1\\.venv\\Scripts\\python.exe",
+  "venv_path": "D:\\sovereign-distillery-thesis-v1.1\\.venv",
+  "virtual_env": null,
+  "system_ram_total_bytes": 68399640576,
+  "system_ram_available_bytes": 40023347200,
+  "disks": {
+    "C:\\": {
+      "total_bytes": 2047381549056,
+      "free_bytes": 687376613376,
+      "used_bytes": 1360004935680
+    },
+    "D:\\": {
+      "total_bytes": 1999643029504,
+      "free_bytes": 431235301376,
+      "used_bytes": 1568407728128
+    }
+  },
+  "packages": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.15.1",
+    "accelerate": "1.14.0",
+    "bitsandbytes": "0.50.1",
+    "peft": "0.20.0",
+    "datasets": null,
+    "trl": null,
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "psutil": "7.2.2"
+  }
+}

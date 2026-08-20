@@ -1,0 +1,121 @@
+{
+  "schema": "sovereign-distillery/hardware_profile/v1",
+  "captured_at": "2026-08-20T01:07:23.537071+00:00",
+  "host": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 191 Stepping 2, GenuineIntel",
+    "python": "3.12.10",
+    "executable": "D:\\sovereign-distillery-thesis-v1.1\\.venv\\Scripts\\python.exe",
+    "conda_env": null,
+    "virtual_env": null
+  },
+  "nvidia_smi": [
+    {
+      "name": "NVIDIA GeForce RTX 5060 Ti",
+      "driver_version": "610.74",
+      "memory_total": "8151 MiB",
+      "memory_used": "2172 MiB",
+      "memory_free": "5720 MiB",
+      "compute_capability": "12.0",
+      "pcie_gen_current": "4",
+      "pcie_width_current": "8",
+      "temperature_c": "31"
+    }
+  ],
+  "packages": {
+    "torch": "2.13.0+cu130",
+    "torchvision": null,
+    "transformers": "5.15.1",
+    "accelerate": "1.14.0",
+    "peft": "0.20.0",
+    "trl": null,
+    "datasets": null,
+    "bitsandbytes": "0.50.1",
+    "triton": null,
+    "flash_attn": null,
+    "xformers": null,
+    "safetensors": "0.8.0",
+    "sentencepiece": null,
+    "numpy": "2.5.2",
+    "unsloth": null,
+    "llama_cpp": null
+  },
+  "torch": {
+    "version": "2.13.0+cu130",
+    "cuda_compiled_version": "13.0",
+    "cudnn_version": 92000,
+    "cuda_available": true,
+    "device_count": 1,
+    "devices": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5060 Ti",
+        "compute_capability": "12.0",
+        "sm_tag": "sm_120",
+        "total_memory_bytes": 8546484224,
+        "total_memory_gib": 7.96,
+        "multi_processor_count": 36,
+        "torch_arch_list": [
+          "sm_75",
+          "sm_80",
+          "sm_86",
+          "sm_90",
+          "sm_100",
+          "sm_120"
+        ],
+        "arch_supported_by_this_torch_build": true,
+        "bf16_supported": true
+      }
+    ],
+    "matmul_tf32": false
+  },
+  "bitsandbytes": {
+    "version": "0.50.1",
+    "cuda": true,
+    "linear4bit_forward": true,
+    "output_shape": [
+      4,
+      256
+    ],
+    "output_finite": true
+  },
+  "storage_and_ram": {
+    "system_ram": {
+      "total": 68399640576,
+      "available": 38913015808,
+      "percent": 43.1,
+      "used": 29486624768,
+      "free": 38913015808
+    },
+    "disks": {
+      "D:\\": {
+        "total_gib": 1862.31,
+        "used_gib": 1460.69,
+        "free_gib": 401.62
+      },
+      "C:\\": {
+        "total_gib": 1906.77,
+        "used_gib": 1266.6,
+        "free_gib": 640.17
+      },
+      "/": {
+        "total_gib": 1862.31,
+        "used_gib": 1460.69,
+        "free_gib": 401.62
+      }
+    }
+  },
+  "errors": [],
+  "verdict": {
+    "blocking_issues": [],
+    "warnings": [
+      "Under ~9 GiB nominal: QLoRA on 7B is at or past the modelled margin. Plan the conservative end of the envelope until a smoke test says otherwise.",
+      "Training stack incomplete \u2014 missing: datasets"
+    ],
+    "notes": [
+      "GPU NVIDIA GeForce RTX 5060 Ti \u2014 7.96 GiB nominal, sm_120.",
+      "bitsandbytes 4-bit forward pass succeeded \u2014 QLoRA path viable."
+    ]
+  }
+}

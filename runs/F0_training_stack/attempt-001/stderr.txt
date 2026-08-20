@@ -1,0 +1,3 @@
+W0819 20:10:21 torch.utils.flop_counter: triton not found; flop counting will not work for triton kernels.
+Hugging Face Hub: unauthenticated request warning; the public test model still downloaded successfully.
+Hugging Face Hub: Windows cache symlinks unavailable at D:\_codex_tmp\sovereign_distillery_hf; degraded cache mode used.

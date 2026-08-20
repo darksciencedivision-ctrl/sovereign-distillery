@@ -1,0 +1,106 @@
+{
+  "schema": "sovereign-distillery/f0-result/v1",
+  "phase": "F.0",
+  "status": "PASS",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 5060 Ti",
+    "driver_version": "610.74",
+    "memory_total_mib": "8151",
+    "memory_used_mib": "2445",
+    "memory_free_mib": "5447",
+    "pci_bus_id": "00000000:01:00.0",
+    "compute_capability_driver": "12.0",
+    "performance_state": "P0",
+    "temperature_c": "31",
+    "cuda_version_driver": "13.3",
+    "torch_device_name": "NVIDIA GeForce RTX 5060 Ti",
+    "torch_compute_capability": [
+      12,
+      0
+    ],
+    "torch_sm_tag": "sm_120",
+    "torch_arch_list": [
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ],
+    "arch_supported_by_torch": true,
+    "bf16_supported": true,
+    "total_vram_bytes_torch": 8546484224
+  },
+  "software": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.15.1",
+    "accelerate": "1.14.0",
+    "bitsandbytes": "0.50.1",
+    "peft": "0.20.0",
+    "datasets": null,
+    "trl": null,
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "psutil": "7.2.2"
+  },
+  "test_model": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "architecture": "llama",
+    "parameter_count": 81430848,
+    "load_seconds": 7.923001100003603,
+    "bitsandbytes_linear4bit_layers": 210,
+    "model_memory_footprint_bytes": 109777792,
+    "cache_dir": "D:\\_codex_tmp\\sovereign_distillery_hf"
+  },
+  "quantization": {
+    "method": "bitsandbytes NF4",
+    "load_in_4bit": true,
+    "compute_dtype": "bfloat16",
+    "double_quantization": true
+  },
+  "forward_pass": {
+    "passed": true,
+    "input_tokens": 14,
+    "logits_shape": [
+      1,
+      14,
+      49152
+    ],
+    "logits_finite": true,
+    "seconds": 0.5603921000001719,
+    "device": "cuda:0"
+  },
+  "training_step": {
+    "passed": true,
+    "loss": 8.469594955444336,
+    "gradient_norm": 1.0324193239212036,
+    "trainable_parameter_count": 230400,
+    "optimizer": "torch.optim.AdamW",
+    "learning_rate": 0.0001,
+    "seconds": 0.3662685000017518,
+    "device": "cuda:0"
+  },
+  "peak_vram_bytes": 258847232,
+  "limitations": [
+    "F.0 uses a 135M test model; it proves the kernel and QLoRA path, not feasibility of a 1\u20133B seed.",
+    "The Windows display workload reduces free VRAM and may change between runs.",
+    "datasets and trl were intentionally not installed because this gate does not require them."
+  ],
+  "warnings": [
+    "Triton is not installed; PyTorch reported that flop counting for Triton kernels is unavailable. The tested bitsandbytes CUDA path did not require Triton.",
+    "The external Hugging Face cache could not use symlinks on this Windows host and used the documented degraded cache mode.",
+    "The test-model download was unauthenticated; no token was required or stored."
+  ],
+  "failures": [],
+  "evidence_paths": [
+    "runs\\F0_training_stack\\attempt-001\\result.json",
+    "runs\\F0_training_stack\\attempt-001\\environment.json",
+    "runs\\F0_training_stack\\attempt-001\\hardware.json",
+    "runs\\F0_training_stack\\attempt-001\\commands.txt",
+    "runs\\F0_training_stack\\attempt-001\\stdout.txt",
+    "runs\\F0_training_stack\\attempt-001\\stderr.txt"
+  ],
+  "timestamp_utc": "2026-08-20T01:10:35.059187+00:00",
+  "peak_vram_reserved_bytes": 293601280
+}

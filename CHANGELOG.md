@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### Measured
+
+- **F.0 PASS** — PyTorch 2.13.0+cu130 sees the RTX 5060 Ti as `sm_120`; bitsandbytes 0.50.1 loaded an NF4 model and completed CUDA forward, LoRA backward, and an AdamW optimizer step.
+
+### Added
+
+- Reproducible F.0 harness and structured evidence under `runs/F0_training_stack/`.
+
 ## [1.1.0] — 2026-08-19
 
 ### Fixed (from THESIS-REVIEW-v1.1 / PATCH-NOTES)
