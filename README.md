@@ -42,6 +42,7 @@ This repository contains the canonical **evidence-grounded thesis and engineerin
 | [`docs/OQ_CROSSWALK.md`](docs/OQ_CROSSWALK.md) | Open-question status + phase namespace mapping |
 | [`docs/EVIDENCE_REGISTER.md`](docs/EVIDENCE_REGISTER.md) | Evidence artifacts, status, and remaining measurements |
 | [`registry/VALIDATION.md`](registry/VALIDATION.md) | Independently recomputed D2 totals and canonical order |
+| [`docs/seed/CANDIDATE_SHORTLIST.md`](docs/seed/CANDIDATE_SHORTLIST.md) | D3 exact-revision seed candidates and primary-license audit |
 | [`tools/`](tools/) | D1 / D2 / D3 measurement instruments |
 
 ## Current status
@@ -51,6 +52,7 @@ This repository contains the canonical **evidence-grounded thesis and engineerin
 - **OQ-001 (seed)** — Bootstrap path preferred; external 1–3B candidates required.
 - **OQ-003 (v1 acceptance)** — CLOSED (Route A = pipeline proof, Route B = transfer proof; v1 requires Route B).
 - **F.0 toolchain gate** — PASS on PyTorch 2.13.0+cu130 / bitsandbytes 0.50.1; the 1–3B capacity boundary remains unmeasured.
+- **D3 seed shortlist** — COMPLETE with three Apache-2.0 base checkpoints; `SOV-SEED` remains operator-owned.
 
 ## Immediate next steps
 

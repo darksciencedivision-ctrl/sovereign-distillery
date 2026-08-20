@@ -1,0 +1,163 @@
+{
+  "schema": "sovereign-distillery/seed-shortlist/v1",
+  "phase": "D3",
+  "generated_at": "2026-08-20T01:25:00Z",
+  "status": "SHORTLIST_COMPLETE",
+  "sov_seed_status": "OPERATOR_DECISION_REQUIRED",
+  "selection_policy": {
+    "candidate_count": 3,
+    "parameter_envelope": "1B-3B",
+    "base_checkpoint_preference": true,
+    "license_preference": "PERMISSIVE",
+    "hardware_basis": "F.0 PASS on RTX 5060 Ti sm_120; 1-3B capacity remains candidate-specific until D4",
+    "canonical_selection_made": false
+  },
+  "source_method": {
+    "classification": "FACT",
+    "method": "Hugging Face Hub API metadata plus exact-revision primary model files",
+    "authenticated": false,
+    "weights_downloaded_for_d3": false
+  },
+  "candidates": [
+    {
+      "id": "S001",
+      "exact_model": "allenai/OLMo-2-0425-1B",
+      "revision": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+      "checkpoint_type": "BASE_PRETRAINED",
+      "parameter_count": 1484916736,
+      "source_tensor_dtype": "float32",
+      "source_weight_bytes": 5939687552,
+      "architecture": "olmo2",
+      "transformers_class": "Olmo2ForCausalLM",
+      "tokenizer_class": "GPT2Tokenizer",
+      "vocabulary_size": 100352,
+      "context_window_tokens": 4096,
+      "license": {
+        "identifier": "Apache-2.0",
+        "class": "PERMISSIVE",
+        "status": "VERIFIED_PRIMARY_MODEL_CARD",
+        "primary_file": "README.md",
+        "primary_file_sha256": "8e09b3ce741d945b340e51530dd95f49c646a210d0342b1a831a19e36928758b",
+        "primary_url": "https://huggingface.co/allenai/OLMo-2-0425-1B/blob/a1847dff35000b4271fa70afc5db10fd29fedbdf/README.md",
+        "note": "The exact-revision model card declares the code and model Apache 2.0; the repository has no standalone LICENSE file."
+      },
+      "nf4_qlora": {
+        "candidate_specific_status": "UNVERIFIED_PENDING_D4",
+        "estimated_quantized_weight_bytes": 890950042,
+        "estimated_training_working_set_gib": {
+          "minimum": 2.3,
+          "maximum": 3.8
+        },
+        "estimate_basis": "0.6 bytes/parameter for quantized weights plus a conservative LoRA/activation/runtime envelope at batch 1 and short context",
+        "classification": "ESTIMATE"
+      },
+      "availability": "Public exact revision; metadata and primary files accessible without authentication",
+      "ecosystem_support": "Native Transformers olmo2 implementation; official Ai2 fine-tuning recipes",
+      "strengths": [
+        "Smallest candidate and widest expected local training margin",
+        "Fully open training artifacts and strong provenance posture",
+        "Permissive Apache 2.0 base checkpoint"
+      ],
+      "risks": [
+        "4,096-token native context is the shortest shortlist context",
+        "English-focused pretraining",
+        "Source checkpoint is F32 and requires the largest download per parameter"
+      ],
+      "future_migration": "Low bootstrap cost; cross-family migration remains behavioral distillation unless compatibility is demonstrated.",
+      "reason_shortlisted": "Best transparency and hardware-margin candidate within the approved bootstrap envelope."
+    },
+    {
+      "id": "S002",
+      "exact_model": "Qwen/Qwen3-1.7B-Base",
+      "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+      "checkpoint_type": "BASE_PRETRAINED",
+      "parameter_count": 1720574976,
+      "source_tensor_dtype": "bfloat16",
+      "source_weight_bytes": 3441185608,
+      "architecture": "qwen3",
+      "transformers_class": "Qwen3ForCausalLM",
+      "tokenizer_class": "Qwen2Tokenizer",
+      "vocabulary_size": 151936,
+      "context_window_tokens": 32768,
+      "license": {
+        "identifier": "Apache-2.0",
+        "class": "PERMISSIVE",
+        "status": "VERIFIED_PRIMARY_LICENSE_FILE",
+        "primary_file": "LICENSE",
+        "primary_file_sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+        "primary_url": "https://huggingface.co/Qwen/Qwen3-1.7B-Base/blob/ea980cb0a6c2ae4b936e82123acc929f1cec04c1/LICENSE"
+      },
+      "nf4_qlora": {
+        "candidate_specific_status": "UNVERIFIED_PENDING_D4",
+        "estimated_quantized_weight_bytes": 1032344986,
+        "estimated_training_working_set_gib": {
+          "minimum": 2.6,
+          "maximum": 4.2
+        },
+        "estimate_basis": "0.6 bytes/parameter for quantized weights plus a conservative LoRA/activation/runtime envelope at batch 1 and short context",
+        "classification": "ESTIMATE"
+      },
+      "availability": "Public exact revision; metadata, license, config, and tokenizer files accessible without authentication",
+      "ecosystem_support": "Native Transformers qwen3 implementation and broad quantization/fine-tuning ecosystem support",
+      "strengths": [
+        "Balanced 1.7B size and 32,768-token native context",
+        "Multilingual Qwen3 base family with mature tooling",
+        "Permissive standalone Apache 2.0 license file"
+      ],
+      "risks": [
+        "Larger tokenizer and model than S001 reduce memory margin",
+        "Base-model instruction behavior may be weak before Distillery training",
+        "Broad family capabilities do not substitute for D4 measurements"
+      ],
+      "future_migration": "Strong bootstrap ecosystem; still not the permanent native architecture and does not authorize weight-level cross-family transfer.",
+      "reason_shortlisted": "Best balance of parameter size, context, license clarity, and ecosystem support."
+    },
+    {
+      "id": "S003",
+      "exact_model": "HuggingFaceTB/SmolLM3-3B-Base",
+      "revision": "d78a42f79198603e614095753484a04c10c2b940",
+      "checkpoint_type": "BASE_PRETRAINED",
+      "parameter_count": 3075098624,
+      "source_tensor_dtype": "bfloat16",
+      "source_weight_bytes": 6150235008,
+      "architecture": "smollm3",
+      "transformers_class": "SmolLM3ForCausalLM",
+      "tokenizer_class": "PreTrainedTokenizerFast",
+      "vocabulary_size": 128256,
+      "context_window_tokens": 65536,
+      "license": {
+        "identifier": "Apache-2.0",
+        "class": "PERMISSIVE",
+        "status": "VERIFIED_PRIMARY_MODEL_CARD",
+        "primary_file": "README.md",
+        "primary_file_sha256": "9bb1fff003df8f9497d2589c345b80817af6864a39938c14edc5207bc5717009",
+        "primary_url": "https://huggingface.co/HuggingFaceTB/SmolLM3-3B-Base/blob/d78a42f79198603e614095753484a04c10c2b940/README.md",
+        "note": "The exact-revision model card links the standard Apache 2.0 text; the repository has no standalone LICENSE file."
+      },
+      "nf4_qlora": {
+        "candidate_specific_status": "UNVERIFIED_PENDING_D4",
+        "estimated_quantized_weight_bytes": 1845059174,
+        "estimated_training_working_set_gib": {
+          "minimum": 4.2,
+          "maximum": 6.2
+        },
+        "estimate_basis": "0.6 bytes/parameter for quantized weights plus a conservative LoRA/activation/runtime envelope at batch 1 and short context",
+        "classification": "ESTIMATE"
+      },
+      "availability": "Public exact revision; metadata and primary files accessible without authentication",
+      "ecosystem_support": "Native Transformers smollm3 implementation, TRL recipes, and published training blueprint",
+      "strengths": [
+        "Largest capacity candidate and longest native context",
+        "Open training blueprint and public data-mixture documentation",
+        "Permissive Apache 2.0 base checkpoint"
+      ],
+      "risks": [
+        "At the 3B upper bound and may exceed the measured free-VRAM training margin",
+        "Candidate-specific QLoRA step is required before calling it locally trainable",
+        "Higher storage and iteration cost than S001 or S002"
+      ],
+      "future_migration": "Potentially strongest bootstrap capacity, but higher local cost could slow the evidence loop and migration experiments.",
+      "reason_shortlisted": "Upper-bound candidate that tests whether additional capacity is worth the reduced hardware margin."
+    }
+  ]
+}

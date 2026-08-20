@@ -11,6 +11,7 @@
 
 - Reproducible F.0 harness and structured evidence under `runs/F0_training_stack/`.
 - D2 registry validator and schema-v2 canonical/execution queue fields.
+- D3 shortlist of three exact-revision 1–3B base checkpoints with primary-license evidence.
 
 ### Corrected
 
