@@ -7,6 +7,7 @@
 - **F.0 PASS** — PyTorch 2.13.0+cu130 sees the RTX 5060 Ti as `sm_120`; bitsandbytes 0.50.1 loaded an NF4 model and completed CUDA forward, LoRA backward, and an AdamW optimizer step.
 - **D2 PASS** — Recomputed 43 entries / 39 generative teachers / 768.406 GiB and verified canonical smallest-to-largest order.
 - **F.1 PASS** — Canonical T001 measured at 72.947 mean tok/s over 15 trials with 5,085 MiB observed VRAM delta.
+- **D4 PASS** — All three seed candidates loaded in NF4 and completed candidate-specific LoRA optimizer steps; S002 and S003 tied at 4/8 on the deterministic smoke suite.
 
 ### Added
 
@@ -14,6 +15,7 @@
 - D2 registry validator and schema-v2 canonical/execution queue fields.
 - D3 shortlist of three exact-revision 1–3B base checkpoints with primary-license evidence.
 - Reproducible F.1 harness, rejected contention attempt, raw trials, and measured registry execution overlay.
+- D4 deterministic baseline harness, per-candidate raw evidence, and operator-gated S002 recommendation.
 
 ### Corrected
 

@@ -1,0 +1,58 @@
+{
+  "schema": "sovereign-distillery/d4-summary/v1",
+  "phase": "D4",
+  "status": "PASS",
+  "classification": "DERIVED_FROM_MEASURED_CANDIDATE_RESULTS",
+  "suite": "D4-lite-v1",
+  "candidate_count": 3,
+  "candidate_results": [
+    {
+      "id": "S001",
+      "model": "allenai/OLMo-2-0425-1B",
+      "status": "PASS",
+      "exact_score": 0.125,
+      "tasks_passed": 1,
+      "tasks_total": 8,
+      "mean_output_tokens_per_second": 11.110574798213285,
+      "median_task_latency_seconds": 2.761740750000172,
+      "model_memory_footprint_bytes": 1359221248,
+      "peak_qlora_allocated_bytes": 2340644352,
+      "qlora_smoke_passed": true
+    },
+    {
+      "id": "S002",
+      "model": "Qwen/Qwen3-1.7B-Base",
+      "status": "PASS",
+      "exact_score": 0.5,
+      "tasks_passed": 4,
+      "tasks_total": 8,
+      "mean_output_tokens_per_second": 4.592049430033814,
+      "median_task_latency_seconds": 3.95233410000219,
+      "model_memory_footprint_bytes": 1327221248,
+      "peak_qlora_allocated_bytes": 2123118592,
+      "qlora_smoke_passed": true
+    },
+    {
+      "id": "S003",
+      "model": "HuggingFaceTB/SmolLM3-3B-Base",
+      "status": "PASS",
+      "exact_score": 0.5,
+      "tasks_passed": 4,
+      "tasks_total": 8,
+      "mean_output_tokens_per_second": 5.2170696192692905,
+      "median_task_latency_seconds": 3.097336049999285,
+      "model_memory_footprint_bytes": 1931776512,
+      "peak_qlora_allocated_bytes": 2716065792,
+      "qlora_smoke_passed": true
+    }
+  ],
+  "recommendation": {
+    "candidate_id": "S002",
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "basis": "Tied best exact score, lowest measured QLoRA allocation, standalone primary license file, and 32K native context.",
+    "classification": "INTERPRETATION_FROM_MEASUREMENTS",
+    "canonical_selection": false,
+    "sov_seed_status": "OPERATOR_DECISION_REQUIRED"
+  },
+  "timestamp_utc": "2026-08-20T01:40:00Z"
+}

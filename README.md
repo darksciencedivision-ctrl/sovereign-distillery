@@ -43,6 +43,7 @@ This repository contains the canonical **evidence-grounded thesis and engineerin
 | [`docs/EVIDENCE_REGISTER.md`](docs/EVIDENCE_REGISTER.md) | Evidence artifacts, status, and remaining measurements |
 | [`registry/VALIDATION.md`](registry/VALIDATION.md) | Independently recomputed D2 totals and canonical order |
 | [`docs/seed/CANDIDATE_SHORTLIST.md`](docs/seed/CANDIDATE_SHORTLIST.md) | D3 exact-revision seed candidates and primary-license audit |
+| [`docs/seed/SEED_RECOMMENDATION.md`](docs/seed/SEED_RECOMMENDATION.md) | D4 measurements and operator-gated bootstrap recommendation |
 | [`tools/`](tools/) | D1 / D2 / D3 measurement instruments |
 
 ## Current status
@@ -54,13 +55,14 @@ This repository contains the canonical **evidence-grounded thesis and engineerin
 - **F.0 toolchain gate** — PASS on PyTorch 2.13.0+cu130 / bitsandbytes 0.50.1; the 1–3B capacity boundary remains unmeasured.
 - **D3 seed shortlist** — COMPLETE with three Apache-2.0 base checkpoints; `SOV-SEED` remains operator-owned.
 - **F.1 throughput** — PASS for canonical `T001 dolphin3:8b`; technical execution measured, license eligibility still pending.
+- **D4 seed baseline** — all three NF4/QLoRA smoke paths PASS; S002 recommended for operator review.
 
 ## Immediate next steps
 
-1. Baseline the three D3 seed candidates under the same deterministic D4 suite.
-2. Produce an evidence-backed bootstrap-seed recommendation for operator review.
+1. Obtain the operator's accept/defer/reject decision on recommended S002.
+2. Build and freeze the full evaluation suite before any candidate promotion.
 3. Audit primary licenses before any teacher becomes `ELIGIBLE`.
-4. Build and freeze the full evaluation suite.
+4. Measure sustained QLoRA memory at the operator-approved seed's intended sequence length.
 
 ## Visibility warning
 

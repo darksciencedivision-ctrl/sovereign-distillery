@@ -1,0 +1,12 @@
+[2026-08-20T01:35:20.127073+00:00] Loading Qwen/Qwen3-1.7B-Base at ea980cb0a6c2ae4b936e82123acc929f1cec04c1 in NF4
+[2026-08-20T01:36:08.693264+00:00] Running 8 deterministic tasks
+[2026-08-20T01:36:13.287318+00:00] task=instruction_exact passed=True output_tokens=5 tok/s=1.090
+[2026-08-20T01:36:16.605140+00:00] task=structured_json passed=True output_tokens=17 tok/s=5.127
+[2026-08-20T01:36:22.143891+00:00] task=code_square passed=False output_tokens=24 tok/s=4.334
+[2026-08-20T01:36:24.308637+00:00] task=math_multiply passed=False output_tokens=5 tok/s=2.311
+[2026-08-20T01:36:29.626365+00:00] task=reasoning_train passed=False output_tokens=24 tok/s=4.513
+[2026-08-20T01:36:30.282760+00:00] task=science_phase_change passed=True output_tokens=8 tok/s=12.209
+[2026-08-20T01:36:32.898878+00:00] task=context_retrieval passed=False output_tokens=11 tok/s=4.208
+[2026-08-20T01:36:38.333082+00:00] task=tool_call_json passed=True output_tokens=16 tok/s=2.944
+[2026-08-20T01:36:38.386243+00:00] Running candidate-specific LoRA loss/backward/optimizer smoke step
+[2026-08-20T01:36:42.969549+00:00] D4 PASS for S002: deterministic score=4/8, QLoRA step passed

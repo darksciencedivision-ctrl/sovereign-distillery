@@ -1,0 +1,126 @@
+{
+  "schema": "sovereign-distillery/d4-candidate-baseline/v1",
+  "phase": "D4",
+  "status": "PASS",
+  "classification": "MEASURED",
+  "candidate": {
+    "id": "S001",
+    "exact_model": "allenai/OLMo-2-0425-1B",
+    "revision": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+    "checkpoint_type": "BASE_PRETRAINED",
+    "parameter_count": 1484916736,
+    "architecture": "olmo2",
+    "context_window_tokens": 4096
+  },
+  "quantization": {
+    "method": "bitsandbytes NF4",
+    "compute_dtype": "bfloat16",
+    "double_quantization": true
+  },
+  "model_load": {
+    "passed": true,
+    "seconds": 81.23415050000767,
+    "bitsandbytes_linear4bit_layers": 112,
+    "model_memory_footprint_bytes": 1359221248,
+    "peak_pytorch_allocated_bytes": 1403458560,
+    "peak_pytorch_reserved_bytes": 1415577600,
+    "system_vram_after_load_mib": {
+      "total_mib": 8151,
+      "used_mib": 7743,
+      "free_mib": 149
+    },
+    "device": "cuda:0"
+  },
+  "task_summary": {
+    "suite": "D4-lite-v1",
+    "task_count": 8,
+    "passed_count": 1,
+    "exact_score": 0.125,
+    "category_scores": {
+      "instruction_following": {
+        "passed": false,
+        "score": 0
+      },
+      "structured_output": {
+        "passed": true,
+        "score": 1
+      },
+      "code": {
+        "passed": false,
+        "score": 0
+      },
+      "math": {
+        "passed": false,
+        "score": 0
+      },
+      "reasoning": {
+        "passed": false,
+        "score": 0
+      },
+      "science": {
+        "passed": false,
+        "score": 0
+      },
+      "context_behavior": {
+        "passed": false,
+        "score": 0
+      },
+      "tool_formatting": {
+        "passed": false,
+        "score": 0
+      }
+    }
+  },
+  "performance": {
+    "total_input_tokens": 929,
+    "total_output_tokens": 136,
+    "output_tokens_per_second_mean": 11.110574798213285,
+    "output_tokens_per_second_median": 8.223904228120302,
+    "latency_seconds_mean": 2.381621324997468,
+    "latency_seconds_median": 2.761740750000172,
+    "peak_eval_pytorch_allocated_bytes": 1580359680,
+    "peak_eval_pytorch_reserved_bytes": 1646264320,
+    "system_vram_after_eval_mib": {
+      "total_mib": 8151,
+      "used_mib": 7726,
+      "free_mib": 166
+    }
+  },
+  "qlora_smoke": {
+    "passed": true,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "trainable_parameter_count": 524288,
+    "loss": 9.112380027770996,
+    "gradient_norm": 1.0709863901138306,
+    "seconds": 3.562733200000366,
+    "peak_pytorch_allocated_bytes": 2340644352,
+    "peak_pytorch_reserved_bytes": 3128950784,
+    "system_vram_after_step_mib": {
+      "total_mib": 8151,
+      "used_mib": 7691,
+      "free_mib": 201
+    }
+  },
+  "limitations": [
+    "D4-lite is an eight-task deterministic smoke baseline, not the future frozen Distillery evaluation suite.",
+    "Base checkpoints are intentionally tested without inherited instruction tuning; low instruction scores are expected and are not a load failure.",
+    "Generated task outputs are machine-validated; no model judge or subjective score is used."
+  ],
+  "warnings": [
+    "Triton was not installed; the tested bitsandbytes path did not require it.",
+    "PyTorch reported expandable CUDA allocator segments are unsupported on this Windows platform.",
+    "The public model download was unauthenticated and used degraded no-symlink Hugging Face cache mode."
+  ],
+  "failures": [],
+  "evidence_paths": [
+    "runs\\D4_seed_baseline\\S001\\result.json",
+    "runs\\D4_seed_baseline\\S001\\tasks.jsonl",
+    "runs\\D4_seed_baseline\\S001\\environment.json",
+    "runs\\D4_seed_baseline\\S001\\stdout.txt",
+    "runs\\D4_seed_baseline\\S001\\stderr.txt"
+  ],
+  "timestamp_utc": "2026-08-20T01:34:40.177095+00:00"
+}

@@ -1,0 +1,5 @@
+$env:PYTORCH_ALLOC_CONF='expandable_segments:True'
+$env:PYTORCH_CUDA_ALLOC_CONF='expandable_segments:True'
+.venv\Scripts\python.exe tools\d4_baseline.py --shortlist docs\seed\candidate-seeds.json --candidate-id S001 --out-dir runs\D4_seed_baseline\S001 --cache-dir D:\_codex_tmp\sovereign_distillery_hf
+.venv\Scripts\python.exe tools\d4_baseline.py --shortlist docs\seed\candidate-seeds.json --candidate-id S002 --out-dir runs\D4_seed_baseline\S002 --cache-dir D:\_codex_tmp\sovereign_distillery_hf
+.venv\Scripts\python.exe tools\d4_baseline.py --shortlist docs\seed\candidate-seeds.json --candidate-id S003 --out-dir runs\D4_seed_baseline\S003 --cache-dir D:\_codex_tmp\sovereign_distillery_hf

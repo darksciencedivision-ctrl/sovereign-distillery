@@ -30,6 +30,8 @@ runs/*
 !runs/F0_training_stack/**
 !runs/F1_teacher_throughput/
 !runs/F1_teacher_throughput/**
+!runs/D4_seed_baseline/
+!runs/D4_seed_baseline/**
 runs/**/*.log
 runs/**/*.csv
 

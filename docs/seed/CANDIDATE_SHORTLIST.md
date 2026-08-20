@@ -2,13 +2,13 @@
 
 **Status: SHORTLIST COMPLETE. `SOV-SEED: OPERATOR_DECISION_REQUIRED`.**
 
-No seed is selected by this document. The three exact base checkpoints satisfy the 1–3B bootstrap envelope and carry primary-source Apache 2.0 declarations. Candidate-specific 4-bit compatibility and capability measurements remain D4 work.
+No seed is selected by this document. The three exact base checkpoints satisfy the 1–3B bootstrap envelope and carry primary-source Apache 2.0 declarations. D4 subsequently measured all three candidate-specific NF4 loads and short QLoRA steps as PASS; see `SEED_RECOMMENDATION.md`.
 
 | ID | Exact base checkpoint | Parameters | Architecture | Native context | Primary license | D3 local QLoRA posture |
 |---|---|---:|---|---:|---|---|
-| S001 | [`allenai/OLMo-2-0425-1B`](https://huggingface.co/allenai/OLMo-2-0425-1B/tree/a1847dff35000b4271fa70afc5db10fd29fedbdf) | 1.485B | OLMo 2 | 4,096 | Apache-2.0, exact-revision model card | Lowest-risk estimate; candidate-specific test pending |
-| S002 | [`Qwen/Qwen3-1.7B-Base`](https://huggingface.co/Qwen/Qwen3-1.7B-Base/tree/ea980cb0a6c2ae4b936e82123acc929f1cec04c1) | 1.721B | Qwen3 | 32,768 | Apache-2.0, exact-revision LICENSE | Balanced estimate; candidate-specific test pending |
-| S003 | [`HuggingFaceTB/SmolLM3-3B-Base`](https://huggingface.co/HuggingFaceTB/SmolLM3-3B-Base/tree/d78a42f79198603e614095753484a04c10c2b940) | 3.075B | SmolLM3 | 65,536 | Apache-2.0, exact-revision model card | Upper-bound / memory-risk estimate; candidate-specific test pending |
+| S001 | [`allenai/OLMo-2-0425-1B`](https://huggingface.co/allenai/OLMo-2-0425-1B/tree/a1847dff35000b4271fa70afc5db10fd29fedbdf) | 1.485B | OLMo 2 | 4,096 | Apache-2.0, exact-revision model card | D4 short QLoRA step PASS |
+| S002 | [`Qwen/Qwen3-1.7B-Base`](https://huggingface.co/Qwen/Qwen3-1.7B-Base/tree/ea980cb0a6c2ae4b936e82123acc929f1cec04c1) | 1.721B | Qwen3 | 32,768 | Apache-2.0, exact-revision LICENSE | D4 short QLoRA step PASS |
+| S003 | [`HuggingFaceTB/SmolLM3-3B-Base`](https://huggingface.co/HuggingFaceTB/SmolLM3-3B-Base/tree/d78a42f79198603e614095753484a04c10c2b940) | 3.075B | SmolLM3 | 65,536 | Apache-2.0, exact-revision model card | D4 short QLoRA step PASS; least headroom |
 
 ## Primary-license audit
 
@@ -34,8 +34,8 @@ Capacity and context upper bound. Its open blueprint is attractive, but the esti
 
 ## Hardware estimates
 
-The NF4 working-set ranges in `candidate-seeds.json` are `ESTIMATE`, not measurements. They use a 0.6-byte/parameter quantized-weight allowance plus a conservative short-context LoRA/activation/runtime envelope. F.0 proves that the selected `sm_120` kernel path works; it does not prove these candidates fit.
+The original NF4 working-set ranges in `candidate-seeds.json` remain `ESTIMATE`. D4 adds measured short-step peak allocations beside them. Those short steps prove compatibility but not production sequence length, batch size, or sustained training stability.
 
 ## Decision boundary
 
-D4 will run the same deterministic baseline on every candidate that loads. The resulting recommendation may identify a preferred bootstrap seed, but canonical selection remains with the human operator.
+D4 ran the same deterministic baseline on every candidate and recommends S002 for review. Canonical selection remains with the human operator.

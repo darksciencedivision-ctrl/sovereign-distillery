@@ -1,0 +1,12 @@
+[2026-08-20T01:37:22.896120+00:00] Loading HuggingFaceTB/SmolLM3-3B-Base at d78a42f79198603e614095753484a04c10c2b940 in NF4
+[2026-08-20T01:38:46.772703+00:00] Running 8 deterministic tasks
+[2026-08-20T01:38:50.317340+00:00] task=instruction_exact passed=False output_tokens=12 tok/s=3.391
+[2026-08-20T01:38:58.824517+00:00] task=structured_json passed=True output_tokens=32 tok/s=3.762
+[2026-08-20T01:38:59.102134+00:00] task=code_square passed=False output_tokens=3 tok/s=10.819
+[2026-08-20T01:39:01.385941+00:00] task=math_multiply passed=True output_tokens=4 tok/s=1.752
+[2026-08-20T01:39:07.328705+00:00] task=reasoning_train passed=False output_tokens=24 tok/s=4.039
+[2026-08-20T01:39:07.997455+00:00] task=science_phase_change passed=True output_tokens=8 tok/s=11.967
+[2026-08-20T01:39:10.656416+00:00] task=context_retrieval passed=True output_tokens=5 tok/s=1.883
+[2026-08-20T01:39:20.356385+00:00] task=tool_call_json passed=False output_tokens=40 tok/s=4.124
+[2026-08-20T01:39:20.421736+00:00] Running candidate-specific LoRA loss/backward/optimizer smoke step
+[2026-08-20T01:39:24.741622+00:00] D4 PASS for S003: deterministic score=4/8, QLoRA step passed

@@ -2,14 +2,16 @@
   "schema": "sovereign-distillery/seed-shortlist/v1",
   "phase": "D3",
   "generated_at": "2026-08-20T01:25:00Z",
+  "updated_at": "2026-08-20T01:40:00Z",
   "status": "SHORTLIST_COMPLETE",
+  "d4_status": "ALL_CANDIDATE_SHORT_STEPS_PASS",
   "sov_seed_status": "OPERATOR_DECISION_REQUIRED",
   "selection_policy": {
     "candidate_count": 3,
     "parameter_envelope": "1B-3B",
     "base_checkpoint_preference": true,
     "license_preference": "PERMISSIVE",
-    "hardware_basis": "F.0 PASS on RTX 5060 Ti sm_120; 1-3B capacity remains candidate-specific until D4",
+    "hardware_basis": "F.0 PASS on RTX 5060 Ti sm_120; D4 candidate-specific NF4 loads and short QLoRA steps all PASS",
     "canonical_selection_made": false
   },
   "source_method": {
@@ -42,7 +44,9 @@
         "note": "The exact-revision model card declares the code and model Apache 2.0; the repository has no standalone LICENSE file."
       },
       "nf4_qlora": {
-        "candidate_specific_status": "UNVERIFIED_PENDING_D4",
+        "candidate_specific_status": "PASS_MEASURED_D4_SHORT_STEP",
+        "evidence_path": "runs/D4_seed_baseline/S001/result.json",
+        "measured_peak_qlora_allocated_bytes": 2340644352,
         "estimated_quantized_weight_bytes": 890950042,
         "estimated_training_working_set_gib": {
           "minimum": 2.3,
@@ -88,7 +92,9 @@
         "primary_url": "https://huggingface.co/Qwen/Qwen3-1.7B-Base/blob/ea980cb0a6c2ae4b936e82123acc929f1cec04c1/LICENSE"
       },
       "nf4_qlora": {
-        "candidate_specific_status": "UNVERIFIED_PENDING_D4",
+        "candidate_specific_status": "PASS_MEASURED_D4_SHORT_STEP",
+        "evidence_path": "runs/D4_seed_baseline/S002/result.json",
+        "measured_peak_qlora_allocated_bytes": 2123118592,
         "estimated_quantized_weight_bytes": 1032344986,
         "estimated_training_working_set_gib": {
           "minimum": 2.6,
@@ -135,7 +141,9 @@
         "note": "The exact-revision model card links the standard Apache 2.0 text; the repository has no standalone LICENSE file."
       },
       "nf4_qlora": {
-        "candidate_specific_status": "UNVERIFIED_PENDING_D4",
+        "candidate_specific_status": "PASS_MEASURED_D4_SHORT_STEP",
+        "evidence_path": "runs/D4_seed_baseline/S003/result.json",
+        "measured_peak_qlora_allocated_bytes": 2716065792,
         "estimated_quantized_weight_bytes": 1845059174,
         "estimated_training_working_set_gib": {
           "minimum": 4.2,

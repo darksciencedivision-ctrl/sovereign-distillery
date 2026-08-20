@@ -1,0 +1,29 @@
+{
+  "captured_at": "2026-08-20T01:32:23.397302+00:00",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.12.10",
+  "python_executable": "D:\\sovereign-distillery-thesis-v1.1\\.venv\\Scripts\\python.exe",
+  "packages": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.15.1",
+    "accelerate": "1.14.0",
+    "bitsandbytes": "0.50.1",
+    "peft": "0.20.0",
+    "tokenizers": "0.22.2"
+  },
+  "cuda_compiled_version": "13.0",
+  "cuda_available": true,
+  "device_name": "NVIDIA GeForce RTX 5060 Ti",
+  "compute_capability": [
+    12,
+    0
+  ],
+  "system_ram_total_bytes": 68399640576,
+  "system_ram_available_bytes": 20703490048,
+  "vram_at_start_mib": {
+    "total_mib": 8151,
+    "used_mib": 7633,
+    "free_mib": 259
+  },
+  "pytorch_cuda_alloc_conf": "expandable_segments:True"
+}

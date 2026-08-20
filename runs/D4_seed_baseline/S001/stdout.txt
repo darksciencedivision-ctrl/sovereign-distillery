@@ -1,0 +1,12 @@
+[2026-08-20T01:32:51.122998+00:00] Loading allenai/OLMo-2-0425-1B at a1847dff35000b4271fa70afc5db10fd29fedbdf in NF4
+[2026-08-20T01:34:12.421933+00:00] Running 8 deterministic tasks
+[2026-08-20T01:34:15.175555+00:00] task=instruction_exact passed=False output_tokens=4 tok/s=1.458
+[2026-08-20T01:34:18.304671+00:00] task=structured_json passed=True output_tokens=32 tok/s=10.229
+[2026-08-20T01:34:21.085667+00:00] task=code_square passed=False output_tokens=24 tok/s=8.633
+[2026-08-20T01:34:21.198844+00:00] task=math_multiply passed=False output_tokens=3 tok/s=26.720
+[2026-08-20T01:34:23.077475+00:00] task=reasoning_train passed=False output_tokens=5 tok/s=2.663
+[2026-08-20T01:34:23.402862+00:00] task=science_phase_change passed=False output_tokens=8 tok/s=24.627
+[2026-08-20T01:34:26.372761+00:00] task=context_retrieval passed=False output_tokens=20 tok/s=6.739
+[2026-08-20T01:34:31.492635+00:00] task=tool_call_json passed=False output_tokens=40 tok/s=7.814
+[2026-08-20T01:34:31.559542+00:00] Running candidate-specific LoRA loss/backward/optimizer smoke step
+[2026-08-20T01:34:40.177095+00:00] D4 PASS for S001: deterministic score=1/8, QLoRA step passed
